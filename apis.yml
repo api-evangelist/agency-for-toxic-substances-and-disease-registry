@@ -5,10 +5,10 @@ name: Agency for Toxic Substances and Disease Registry
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Federal Government
-  - Toxic Substances
   - Diseases
+  - Federal Government
   - Public Health
+  - Toxic Substances
 description: >-
   ATSDR protects communities from harmful health effects related to exposure to
   natural and man-made hazardous substances. It is a federal public health
