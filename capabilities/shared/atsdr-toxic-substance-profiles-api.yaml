@@ -1,0 +1,40 @@
+name: ATSDR Toxic Substance Profiles API
+namespace: atsdr-toxic-substance-profiles-api
+description: "Shared capability definitions for ATSDR toxicological data including profiles, MRLs, priority lists, and exposure investigations."
+tools:
+  - name: list-toxicological-profiles
+    description: "List ATSDR toxicological profiles for hazardous substances."
+    operation: GET /toxprofiles
+    parameters:
+      - name: substance_name
+        description: "Filter by substance name."
+      - name: cas_number
+        description: "Filter by CAS registry number."
+      - name: $limit
+        description: "Maximum results per page."
+      - name: $offset
+        description: "Pagination offset."
+  - name: list-minimum-risk-levels
+    description: "List ATSDR Minimum Risk Levels (MRLs) for hazardous substances by exposure route and duration."
+    operation: GET /mrls
+    parameters:
+      - name: substance_name
+        description: "Filter by substance name."
+      - name: route
+        description: "Exposure route (inhalation, oral, dermal)."
+      - name: duration
+        description: "Exposure duration (acute, intermediate, chronic)."
+  - name: list-substance-priority-list
+    description: "List ATSDR Substance Priority List rankings."
+    operation: GET /priority-list
+    parameters:
+      - name: year
+        description: "Filter by priority list year."
+  - name: list-exposure-investigations
+    description: "List ATSDR exposure investigations and health consultations at hazardous sites."
+    operation: GET /exposure-investigations
+    parameters:
+      - name: state
+        description: "Filter by US state abbreviation."
+      - name: year
+        description: "Filter by investigation year."

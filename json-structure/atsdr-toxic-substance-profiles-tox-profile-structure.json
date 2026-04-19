@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/agency-for-toxic-substances-and-disease-registry/refs/heads/main/json-structure/atsdr-toxic-substance-profiles-tox-profile-structure.json",
+  "name": "ToxProfile",
+  "description": "ToxProfile schema from ATSDR API",
+  "type": "object",
+  "properties": {
+    "substance_name": {
+      "type": "string",
+      "description": "Name of the hazardous substance.",
+      "example": "Example Name"
+    },
+    "cas_number": {
+      "type": "string",
+      "description": "Chemical Abstracts Service registry number.",
+      "example": "example_value"
+    },
+    "profile_year": {
+      "type": "int32",
+      "description": "Year the toxicological profile was published or updated.",
+      "example": 1
+    },
+    "substance_priority_list_rank": {
+      "type": "int32",
+      "description": "Rank on the ATSDR Substance Priority List.",
+      "example": 1
+    },
+    "health_effects": {
+      "type": "string",
+      "description": "Summary of known health effects from exposure.",
+      "example": "example_value"
+    },
+    "primary_route_of_exposure": {
+      "type": "string",
+      "description": "Most common route of exposure (ingestion, inhalation, dermal).",
+      "example": "example_value"
+    },
+    "profile_url": {
+      "type": "string",
+      "description": "URL to the full toxicological profile PDF.",
+      "example": "https://example.com"
+    }
+  }
+}

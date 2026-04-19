@@ -1,0 +1,9 @@
+{
+  "site_name": "Example Name",
+  "state": "example_value",
+  "county": "example_value",
+  "year": 1,
+  "investigation_type": "example_value",
+  "primary_contaminant": "example_value",
+  "status": "completed"
+}

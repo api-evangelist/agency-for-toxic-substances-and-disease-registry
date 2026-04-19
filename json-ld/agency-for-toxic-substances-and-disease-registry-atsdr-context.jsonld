@@ -1,0 +1,105 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "agency-for-toxic-substances-and-disease-registry": "https://agency-for-toxic-substances-and-disease-registry.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ToxProfile": "agency-for-toxic-substances-and-disease-registry:ToxProfile",
+    "substanceName": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:substance_name",
+      "@type": "xsd:string"
+    },
+    "casNumber": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:cas_number",
+      "@type": "xsd:string"
+    },
+    "profileYear": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:profile_year",
+      "@type": "xsd:integer"
+    },
+    "substancePriorityListRank": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:substance_priority_list_rank",
+      "@type": "xsd:integer"
+    },
+    "healthEffects": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:health_effects",
+      "@type": "xsd:string"
+    },
+    "primaryRouteOfExposure": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:primary_route_of_exposure",
+      "@type": "xsd:string"
+    },
+    "profileUrl": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:profile_url",
+      "@type": "xsd:string"
+    },
+    "MinimumRiskLevel": "agency-for-toxic-substances-and-disease-registry:MinimumRiskLevel",
+    "route": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:route",
+      "@type": "xsd:string"
+    },
+    "duration": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:duration",
+      "@type": "xsd:string"
+    },
+    "mrlValue": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:mrl_value",
+      "@type": "xsd:decimal"
+    },
+    "mrlUnit": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:mrl_unit",
+      "@type": "xsd:string"
+    },
+    "yearUpdated": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:year_updated",
+      "@type": "xsd:integer"
+    },
+    "ExposureInvestigation": "agency-for-toxic-substances-and-disease-registry:ExposureInvestigation",
+    "siteName": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:site_name",
+      "@type": "xsd:string"
+    },
+    "state": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:state",
+      "@type": "xsd:string"
+    },
+    "county": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:county",
+      "@type": "xsd:string"
+    },
+    "year": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:year",
+      "@type": "xsd:integer"
+    },
+    "investigationType": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:investigation_type",
+      "@type": "xsd:string"
+    },
+    "primaryContaminant": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:primary_contaminant",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:status",
+      "@type": "xsd:string"
+    },
+    "SubstancePriority": "agency-for-toxic-substances-and-disease-registry:SubstancePriority",
+    "rank": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:rank",
+      "@type": "xsd:integer"
+    },
+    "totalScore": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:total_score",
+      "@type": "xsd:decimal"
+    },
+    "nplFrequency": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:npl_frequency",
+      "@type": "xsd:integer"
+    },
+    "toxicityScore": {
+      "@id": "agency-for-toxic-substances-and-disease-registry:toxicity_score",
+      "@type": "xsd:decimal"
+    }
+  }
+}

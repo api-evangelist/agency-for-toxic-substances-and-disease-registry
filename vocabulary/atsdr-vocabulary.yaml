@@ -1,0 +1,203 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "ATSDR"
+  description: "Unified taxonomy of the ATSDR Toxic Substance Profiles API covering toxicological profiles, minimum risk levels, substance priority rankings, and exposure investigations."
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: atsdr-toxic-substance-profiles-api
+      name: ATSDR Toxic Substance Profiles API
+      version: "1.0"
+      baseUrl: https://data.cdc.gov/resource
+      status: active
+
+  resources:
+    - name: toxprofiles
+      description: "ATSDR toxicological profiles for hazardous substances."
+      apis:
+        - atsdr-toxic-substance-profiles-api
+      actions:
+        - list
+    - name: mrls
+      description: "ATSDR Minimum Risk Levels for daily human exposure thresholds."
+      apis:
+        - atsdr-toxic-substance-profiles-api
+      actions:
+        - list
+    - name: priority-list
+      description: "ATSDR Substance Priority List ranking hazardous substances at NPL sites."
+      apis:
+        - atsdr-toxic-substance-profiles-api
+      actions:
+        - list
+    - name: exposure-investigations
+      description: "ATSDR exposure investigations and health consultations at hazardous sites."
+      apis:
+        - atsdr-toxic-substance-profiles-api
+      actions:
+        - list
+
+  actions:
+    - name: list
+      description: "List data records with optional filters."
+      httpMethod: GET
+      pattern: read
+
+  schemas:
+    toxicology:
+      - name: ToxProfile
+        description: "Toxicological profile for a hazardous substance including health effects and exposure routes."
+        api: atsdr-toxic-substance-profiles-api
+      - name: MinimumRiskLevel
+        description: "MRL estimate for daily human exposure to a substance without adverse health effects."
+        api: atsdr-toxic-substance-profiles-api
+    priority:
+      - name: SubstancePriority
+        description: "Hazardous substance ranking on the ATSDR Substance Priority List."
+        api: atsdr-toxic-substance-profiles-api
+    investigations:
+      - name: ExposureInvestigation
+        description: "ATSDR exposure investigation or health consultation record."
+        api: atsdr-toxic-substance-profiles-api
+
+  parameters:
+    pagination:
+      - name: $limit
+        description: "Maximum number of results (Socrata convention)."
+        type: integer
+      - name: $offset
+        description: "Offset for pagination (Socrata convention)."
+        type: integer
+    filters:
+      - name: substance_name
+        description: "Filter by substance name."
+        type: string
+      - name: cas_number
+        description: "Filter by CAS registry number."
+        type: string
+      - name: route
+        description: "Filter by exposure route."
+        type: string
+      - name: duration
+        description: "Filter by exposure duration."
+        type: string
+      - name: state
+        description: "Filter by US state abbreviation."
+        type: string
+      - name: year
+        description: "Filter by year."
+        type: integer
+
+  enums:
+    exposure-routes:
+      - inhalation
+      - oral
+      - dermal
+    exposure-durations:
+      - acute
+      - intermediate
+      - chronic
+    investigation-statuses:
+      - completed
+      - ongoing
+      - pending
+
+  authentication:
+    schemes:
+      - type: none
+        description: "ATSDR public data is accessible without authentication."
+        apis:
+          - atsdr-toxic-substance-profiles-api
+
+capability:
+  workflows:
+    - name: Toxic Substance Monitoring
+      file: capabilities/toxic-substance-monitoring.yaml
+      description: "Research and monitoring workflow for hazardous substance toxicology data."
+      apisComposed:
+        - atsdr-toxic-substance-profiles-api
+      toolCount: 4
+      personas:
+        - public-health-researcher
+        - environmental-health-officer
+
+  personas:
+    - id: public-health-researcher
+      name: Public Health Researcher
+      description: "Researcher studying health effects of hazardous substance exposure in communities."
+      workflows:
+        - Toxic Substance Monitoring
+    - id: environmental-health-officer
+      name: Environmental Health Officer
+      description: "Government health officer assessing community exposure risks at contaminated sites."
+      workflows:
+        - Toxic Substance Monitoring
+
+  domains:
+    - name: Toxicological Profiles
+      description: "Health effects and exposure information for hazardous substances."
+      resources:
+        - toxprofiles
+    - name: Health Guidance
+      description: "Minimum risk levels and safe exposure thresholds for chemicals."
+      resources:
+        - mrls
+    - name: Hazard Prioritization
+      description: "Substance priority rankings based on toxicity and exposure frequency."
+      resources:
+        - priority-list
+    - name: Site Investigations
+      description: "Exposure investigations and health consultations at contaminated sites."
+      resources:
+        - exposure-investigations
+
+  namespaces:
+    consumed:
+      - atsdr-toxic-substance-profiles-api
+    rest:
+      - name: atsdr-toxicology-api
+        port: 8080
+    mcp:
+      - name: atsdr-toxicology-mcp
+        port: 9090
+
+  binds:
+    - name: ATSDR_API_KEY
+      description: "Optional API key for higher rate limits on CDC data platform."
+      usedIn:
+        - Toxic Substance Monitoring
+
+crossReference:
+  - resource: toxprofiles
+    operations:
+      - list-toxicological-profiles
+    workflows:
+      - Toxic Substance Monitoring
+    personas:
+      - public-health-researcher
+      - environmental-health-officer
+  - resource: mrls
+    operations:
+      - list-minimum-risk-levels
+    workflows:
+      - Toxic Substance Monitoring
+    personas:
+      - public-health-researcher
+      - environmental-health-officer
+  - resource: priority-list
+    operations:
+      - list-substance-priority-list
+    workflows:
+      - Toxic Substance Monitoring
+    personas:
+      - public-health-researcher
+  - resource: exposure-investigations
+    operations:
+      - list-exposure-investigations
+    workflows:
+      - Toxic Substance Monitoring
+    personas:
+      - environmental-health-officer

@@ -1,0 +1,9 @@
+{
+  "rank": 1,
+  "substance_name": "Example Name",
+  "cas_number": "example_value",
+  "total_score": 99.99,
+  "npl_frequency": 1,
+  "toxicity_score": 99.99,
+  "year": 1
+}

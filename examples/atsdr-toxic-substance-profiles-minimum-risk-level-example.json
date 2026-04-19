@@ -1,0 +1,9 @@
+{
+  "substance_name": "Example Name",
+  "cas_number": "example_value",
+  "route": "inhalation",
+  "duration": "acute",
+  "mrl_value": 99.99,
+  "mrl_unit": "example_value",
+  "year_updated": 1
+}

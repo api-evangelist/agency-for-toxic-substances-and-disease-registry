@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/agency-for-toxic-substances-and-disease-registry/refs/heads/main/json-structure/atsdr-toxic-substance-profiles-exposure-investigation-structure.json",
+  "name": "ExposureInvestigation",
+  "description": "ExposureInvestigation schema from ATSDR API",
+  "type": "object",
+  "properties": {
+    "site_name": {
+      "type": "string",
+      "description": "Name of the contaminated site.",
+      "example": "Example Name"
+    },
+    "state": {
+      "type": "string",
+      "description": "US state abbreviation.",
+      "example": "example_value"
+    },
+    "county": {
+      "type": "string",
+      "description": "County name.",
+      "example": "example_value"
+    },
+    "year": {
+      "type": "int32",
+      "description": "Year of the investigation.",
+      "example": 1
+    },
+    "investigation_type": {
+      "type": "string",
+      "description": "Type of investigation (Health Consultation, Public Health Assessment, etc.).",
+      "example": "example_value"
+    },
+    "primary_contaminant": {
+      "type": "string",
+      "description": "Primary hazardous substance involved.",
+      "example": "example_value"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "ongoing",
+        "pending"
+      ],
+      "description": "Investigation status.",
+      "example": "completed"
+    }
+  }
+}

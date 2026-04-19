@@ -1,0 +1,9 @@
+{
+  "substance_name": "Example Name",
+  "cas_number": "example_value",
+  "profile_year": 1,
+  "substance_priority_list_rank": 1,
+  "health_effects": "example_value",
+  "primary_route_of_exposure": "example_value",
+  "profile_url": "https://example.com"
+}

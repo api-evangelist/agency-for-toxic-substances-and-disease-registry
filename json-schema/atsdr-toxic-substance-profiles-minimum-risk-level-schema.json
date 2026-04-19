@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/agency-for-toxic-substances-and-disease-registry/refs/heads/main/json-schema/atsdr-toxic-substance-profiles-minimum-risk-level-schema.json",
+  "title": "MinimumRiskLevel",
+  "description": "MinimumRiskLevel schema from ATSDR API",
+  "type": "object",
+  "properties": {
+    "substance_name": {
+      "type": "string",
+      "description": "Name of the hazardous substance.",
+      "example": "Example Name"
+    },
+    "cas_number": {
+      "type": "string",
+      "description": "CAS registry number.",
+      "example": "example_value"
+    },
+    "route": {
+      "type": "string",
+      "enum": [
+        "inhalation",
+        "oral",
+        "dermal"
+      ],
+      "description": "Exposure route.",
+      "example": "inhalation"
+    },
+    "duration": {
+      "type": "string",
+      "enum": [
+        "acute",
+        "intermediate",
+        "chronic"
+      ],
+      "description": "Duration of exposure.",
+      "example": "acute"
+    },
+    "mrl_value": {
+      "type": "number",
+      "description": "MRL value (units depend on route).",
+      "example": 99.99
+    },
+    "mrl_unit": {
+      "type": "string",
+      "description": "Unit of measurement for the MRL value.",
+      "example": "example_value"
+    },
+    "year_updated": {
+      "type": "integer",
+      "description": "Year the MRL was last updated.",
+      "example": 1
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/agency-for-toxic-substances-and-disease-registry/refs/heads/main/json-structure/atsdr-toxic-substance-profiles-substance-priority-structure.json",
+  "name": "SubstancePriority",
+  "description": "SubstancePriority schema from ATSDR API",
+  "type": "object",
+  "properties": {
+    "rank": {
+      "type": "int32",
+      "description": "Priority rank on the ATSDR Substance Priority List.",
+      "example": 1
+    },
+    "substance_name": {
+      "type": "string",
+      "description": "Name of the substance.",
+      "example": "Example Name"
+    },
+    "cas_number": {
+      "type": "string",
+      "description": "CAS registry number.",
+      "example": "example_value"
+    },
+    "total_score": {
+      "type": "double",
+      "description": "Composite score used for ranking.",
+      "example": 99.99
+    },
+    "npl_frequency": {
+      "type": "int32",
+      "description": "Number of NPL sites where substance was found.",
+      "example": 1
+    },
+    "toxicity_score": {
+      "type": "double",
+      "description": "Toxicity component of the score.",
+      "example": 99.99
+    },
+    "year": {
+      "type": "int32",
+      "description": "Priority list year.",
+      "example": 1
+    }
+  }
+}

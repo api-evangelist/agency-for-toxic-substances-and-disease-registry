@@ -1,28 +1,46 @@
-# undefined (agency-for-toxic-substances-and-disease-registry)
-ATSDR protects communities from harmful health effects related to exposure to natural and man-made hazardous substances.
+# Agency for Toxic Substances and Disease Registry
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/agency-for-toxic-substances-and-disease-registry/refs/heads/main/apis.yml)
+ATSDR protects communities from harmful health effects related to exposure to natural and man-made hazardous substances. It is a federal public health agency within the U.S. Department of Health and Human Services. ATSDR provides toxicological profiles, minimum risk levels, substance priority rankings, and exposure investigation data for hazardous chemicals.
 
-## Scope
+## APIs
 
-- **Type:** Index 
-- **Position:** Consumer 
-- **Access:** 3rd-Party 
+- **ATSDR Toxic Substance Profiles API** — Toxicological profiles, MRLs, substance priority rankings, and exposure investigations.
+
+## Documentation
+
+- [Substance Profiles](https://www.atsdr.cdc.gov/substances/index.asp)
+- [Minimum Risk Levels](https://www.atsdr.cdc.gov/mrls/index.asp)
+- [Substance Priority List](https://www.atsdr.cdc.gov/spl/index.html)
+- [Website](https://www.atsdr.cdc.gov/)
+
+## Data Portal
+
+- [CDC Open Data: Environmental Health](https://data.cdc.gov/browse?category=Environmental+Health)
+
+## OpenAPI
+
+- [ATSDR Toxic Substance Profiles OpenAPI](openapi/atsdr-toxic-substance-profiles-openapi.yml)
+
+## Capabilities
+
+- [Toxic Substance Monitoring Workflow](capabilities/toxic-substance-monitoring.yaml)
+- [Shared: ATSDR Toxic Substance Profiles API](capabilities/shared/atsdr-toxic-substance-profiles-api.yaml)
+
+## JSON Schema
+
+- [ToxProfile Schema](json-schema/atsdr-toxic-substance-profiles-tox-profile-schema.json)
+- [Minimum Risk Level Schema](json-schema/atsdr-toxic-substance-profiles-minimum-risk-level-schema.json)
+- [Substance Priority Schema](json-schema/atsdr-toxic-substance-profiles-substance-priority-schema.json)
+- [Exposure Investigation Schema](json-schema/atsdr-toxic-substance-profiles-exposure-investigation-schema.json)
+
+## Vocabulary
+
+- [ATSDR Vocabulary](vocabulary/atsdr-vocabulary.yaml)
 
 ## Tags
 
-- Federal Government
-- Toxic Substances
-- Diseases
-
-## Timestamps
-
-- **Created:** 2024-11-21 
-- **Modified:** 2024-12-15 
+Diseases, Federal Government, Public Health, Toxic Substances, Environmental Health, Hazardous Materials
 
 ## Maintainers
 
-**FN:** Kin Lane
-
-**Email:** info@apievangelist.com
-
+- Kin Lane (kin@apievangelist.com)
