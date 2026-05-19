@@ -1,0 +1,90 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ATSDR Toxic Substance Profiles API — Substance Priority List
+  description: 'ATSDR Toxic Substance Profiles API — Substance Priority List. 1 operations. Lead operation: ATSDR List Substance
+    Priority List. Self-contained Naftiko capability covering one Agency For Toxic Substances And Disease Registry business
+    surface.'
+  tags:
+  - Agency For Toxic Substances And Disease Registry
+  - Substance Priority List
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AGENCY_FOR_TOXIC_SUBSTANCES_AND_DISEASE_REGISTRY_API_KEY: AGENCY_FOR_TOXIC_SUBSTANCES_AND_DISEASE_REGISTRY_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: atsdr-toxic-substance-profiles-substance-priority-list
+    baseUri: https://data.cdc.gov/resource
+    description: ATSDR Toxic Substance Profiles API — Substance Priority List business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: priority-list
+      path: /priority-list
+      operations:
+      - name: listsubstanceprioritylist
+        method: GET
+        description: ATSDR List Substance Priority List
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: $limit
+          in: query
+          type: integer
+          description: Maximum number of results to return.
+        - name: $offset
+          in: query
+          type: integer
+          description: Offset for pagination.
+        - name: year
+          in: query
+          type: integer
+          description: Filter by priority list year.
+  exposes:
+  - type: rest
+    namespace: atsdr-toxic-substance-profiles-substance-priority-list-rest
+    port: 8080
+    description: REST adapter for ATSDR Toxic Substance Profiles API — Substance Priority List. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/priority-list
+      name: priority-list
+      description: REST surface for priority-list.
+      operations:
+      - method: GET
+        name: listsubstanceprioritylist
+        description: ATSDR List Substance Priority List
+        call: atsdr-toxic-substance-profiles-substance-priority-list.listsubstanceprioritylist
+        with:
+          $limit: rest.$limit
+          $offset: rest.$offset
+          year: rest.year
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: atsdr-toxic-substance-profiles-substance-priority-list-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ATSDR Toxic Substance Profiles API — Substance Priority List. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: atsdr-list-substance-priority-list
+      description: ATSDR List Substance Priority List
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: atsdr-toxic-substance-profiles-substance-priority-list.listsubstanceprioritylist
+      with:
+        $limit: tools.$limit
+        $offset: tools.$offset
+        year: tools.year
+      outputParameters:
+      - type: object
+        mapping: $.

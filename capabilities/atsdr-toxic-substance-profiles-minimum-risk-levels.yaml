@@ -1,0 +1,101 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ATSDR Toxic Substance Profiles API — Minimum Risk Levels
+  description: 'ATSDR Toxic Substance Profiles API — Minimum Risk Levels. 1 operations. Lead operation: ATSDR List Minimum
+    Risk Levels. Self-contained Naftiko capability covering one Agency For Toxic Substances And Disease Registry business
+    surface.'
+  tags:
+  - Agency For Toxic Substances And Disease Registry
+  - Minimum Risk Levels
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AGENCY_FOR_TOXIC_SUBSTANCES_AND_DISEASE_REGISTRY_API_KEY: AGENCY_FOR_TOXIC_SUBSTANCES_AND_DISEASE_REGISTRY_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: atsdr-toxic-substance-profiles-minimum-risk-levels
+    baseUri: https://data.cdc.gov/resource
+    description: ATSDR Toxic Substance Profiles API — Minimum Risk Levels business capability. Self-contained, no shared references.
+    resources:
+    - name: mrls
+      path: /mrls
+      operations:
+      - name: listminimumrisklevels
+        method: GET
+        description: ATSDR List Minimum Risk Levels
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: $limit
+          in: query
+          type: integer
+          description: Maximum number of results to return.
+        - name: $offset
+          in: query
+          type: integer
+          description: Offset for pagination.
+        - name: substance_name
+          in: query
+          type: string
+          description: Filter by substance name.
+        - name: route
+          in: query
+          type: string
+          description: Filter by exposure route.
+        - name: duration
+          in: query
+          type: string
+          description: Filter by exposure duration.
+  exposes:
+  - type: rest
+    namespace: atsdr-toxic-substance-profiles-minimum-risk-levels-rest
+    port: 8080
+    description: REST adapter for ATSDR Toxic Substance Profiles API — Minimum Risk Levels. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/mrls
+      name: mrls
+      description: REST surface for mrls.
+      operations:
+      - method: GET
+        name: listminimumrisklevels
+        description: ATSDR List Minimum Risk Levels
+        call: atsdr-toxic-substance-profiles-minimum-risk-levels.listminimumrisklevels
+        with:
+          $limit: rest.$limit
+          $offset: rest.$offset
+          substance_name: rest.substance_name
+          route: rest.route
+          duration: rest.duration
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: atsdr-toxic-substance-profiles-minimum-risk-levels-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ATSDR Toxic Substance Profiles API — Minimum Risk Levels. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: atsdr-list-minimum-risk-levels
+      description: ATSDR List Minimum Risk Levels
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: atsdr-toxic-substance-profiles-minimum-risk-levels.listminimumrisklevels
+      with:
+        $limit: tools.$limit
+        $offset: tools.$offset
+        substance_name: tools.substance_name
+        route: tools.route
+        duration: tools.duration
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,96 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ATSDR Toxic Substance Profiles API — Exposure Investigations
+  description: 'ATSDR Toxic Substance Profiles API — Exposure Investigations. 1 operations. Lead operation: ATSDR List Exposure
+    Investigations. Self-contained Naftiko capability covering one Agency For Toxic Substances And Disease Registry business
+    surface.'
+  tags:
+  - Agency For Toxic Substances And Disease Registry
+  - Exposure Investigations
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AGENCY_FOR_TOXIC_SUBSTANCES_AND_DISEASE_REGISTRY_API_KEY: AGENCY_FOR_TOXIC_SUBSTANCES_AND_DISEASE_REGISTRY_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: atsdr-toxic-substance-profiles-exposure-investigations
+    baseUri: https://data.cdc.gov/resource
+    description: ATSDR Toxic Substance Profiles API — Exposure Investigations business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: exposure-investigations
+      path: /exposure-investigations
+      operations:
+      - name: listexposureinvestigations
+        method: GET
+        description: ATSDR List Exposure Investigations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: $limit
+          in: query
+          type: integer
+          description: Maximum number of results to return.
+        - name: $offset
+          in: query
+          type: integer
+          description: Offset for pagination.
+        - name: state
+          in: query
+          type: string
+          description: Filter by US state abbreviation.
+        - name: year
+          in: query
+          type: integer
+          description: Filter by investigation year.
+  exposes:
+  - type: rest
+    namespace: atsdr-toxic-substance-profiles-exposure-investigations-rest
+    port: 8080
+    description: REST adapter for ATSDR Toxic Substance Profiles API — Exposure Investigations. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/exposure-investigations
+      name: exposure-investigations
+      description: REST surface for exposure-investigations.
+      operations:
+      - method: GET
+        name: listexposureinvestigations
+        description: ATSDR List Exposure Investigations
+        call: atsdr-toxic-substance-profiles-exposure-investigations.listexposureinvestigations
+        with:
+          $limit: rest.$limit
+          $offset: rest.$offset
+          state: rest.state
+          year: rest.year
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: atsdr-toxic-substance-profiles-exposure-investigations-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ATSDR Toxic Substance Profiles API — Exposure Investigations. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: atsdr-list-exposure-investigations
+      description: ATSDR List Exposure Investigations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: atsdr-toxic-substance-profiles-exposure-investigations.listexposureinvestigations
+      with:
+        $limit: tools.$limit
+        $offset: tools.$offset
+        state: tools.state
+        year: tools.year
+      outputParameters:
+      - type: object
+        mapping: $.
