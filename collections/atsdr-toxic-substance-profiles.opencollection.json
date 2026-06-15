@@ -1,0 +1,190 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ATSDR Toxic Substance Profiles API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Toxicological Profiles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ATSDR List Toxicological Profiles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://data.cdc.gov/resource/toxprofiles",
+            "params": [
+              {
+                "name": "$limit",
+                "value": "1",
+                "type": "query",
+                "description": "Maximum number of results to return."
+              },
+              {
+                "name": "$offset",
+                "value": "1",
+                "type": "query",
+                "description": "Offset for pagination."
+              },
+              {
+                "name": "substance_name",
+                "value": "Example Name",
+                "type": "query",
+                "description": "Filter by substance name."
+              },
+              {
+                "name": "cas_number",
+                "value": "example_value",
+                "type": "query",
+                "description": "Filter by CAS registry number."
+              }
+            ]
+          },
+          "docs": "List ATSDR toxicological profiles for hazardous substances including health effects and exposure information."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Minimum Risk Levels",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ATSDR List Minimum Risk Levels",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://data.cdc.gov/resource/mrls",
+            "params": [
+              {
+                "name": "$limit",
+                "value": "1",
+                "type": "query",
+                "description": "Maximum number of results to return."
+              },
+              {
+                "name": "$offset",
+                "value": "1",
+                "type": "query",
+                "description": "Offset for pagination."
+              },
+              {
+                "name": "substance_name",
+                "value": "Example Name",
+                "type": "query",
+                "description": "Filter by substance name."
+              },
+              {
+                "name": "route",
+                "value": "inhalation",
+                "type": "query",
+                "description": "Filter by exposure route."
+              },
+              {
+                "name": "duration",
+                "value": "acute",
+                "type": "query",
+                "description": "Filter by exposure duration."
+              }
+            ]
+          },
+          "docs": "List ATSDR Minimum Risk Levels (MRLs) which are estimates of daily human exposure to hazardous substances that are unlikely to cause adverse health effects."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Substance Priority List",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ATSDR List Substance Priority List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://data.cdc.gov/resource/priority-list",
+            "params": [
+              {
+                "name": "$limit",
+                "value": "1",
+                "type": "query",
+                "description": "Maximum number of results to return."
+              },
+              {
+                "name": "$offset",
+                "value": "1",
+                "type": "query",
+                "description": "Offset for pagination."
+              },
+              {
+                "name": "year",
+                "value": "1",
+                "type": "query",
+                "description": "Filter by priority list year."
+              }
+            ]
+          },
+          "docs": "List substances from the ATSDR Substance Priority List (SPL), which ranks hazardous substances based on frequency, toxicity, and potential for human exposure at NPL sites."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Exposure Investigations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ATSDR List Exposure Investigations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://data.cdc.gov/resource/exposure-investigations",
+            "params": [
+              {
+                "name": "$limit",
+                "value": "1",
+                "type": "query",
+                "description": "Maximum number of results to return."
+              },
+              {
+                "name": "$offset",
+                "value": "1",
+                "type": "query",
+                "description": "Offset for pagination."
+              },
+              {
+                "name": "state",
+                "value": "example_value",
+                "type": "query",
+                "description": "Filter by US state abbreviation."
+              },
+              {
+                "name": "year",
+                "value": "1",
+                "type": "query",
+                "description": "Filter by investigation year."
+              }
+            ]
+          },
+          "docs": "List ATSDR exposure investigations and health consultations conducted at hazardous waste sites and other environmental contamination sites."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

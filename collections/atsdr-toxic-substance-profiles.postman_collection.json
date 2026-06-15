@@ -1,0 +1,513 @@
+{
+  "item": [
+    {
+      "id": "27bc5b4d-dd30-4fef-a9c6-b2f8c013f0ec",
+      "name": "Toxicological Profiles",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "20792589-bab4-45c9-beab-4d9c6356f2bf",
+          "name": "ATSDR List Toxicological Profiles",
+          "request": {
+            "name": "ATSDR List Toxicological Profiles",
+            "description": {
+              "content": "List ATSDR toxicological profiles for hazardous substances including health effects and exposure information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "toxprofiles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$limit",
+                  "value": "100",
+                  "description": "Maximum number of results to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "$offset",
+                  "value": "0",
+                  "description": "Offset for pagination."
+                },
+                {
+                  "disabled": false,
+                  "key": "substance_name",
+                  "value": "<string>",
+                  "description": "Filter by substance name."
+                },
+                {
+                  "disabled": false,
+                  "key": "cas_number",
+                  "value": "<string>",
+                  "description": "Filter by CAS registry number."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "536e0f25-6f68-4b80-9215-939cdf34dc5a",
+              "name": "List of toxicological profiles",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "toxprofiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$limit",
+                      "value": "1"
+                    },
+                    {
+                      "key": "$offset",
+                      "value": "1"
+                    },
+                    {
+                      "key": "substance_name",
+                      "value": "Example Name"
+                    },
+                    {
+                      "key": "cas_number",
+                      "value": "example_value"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"substance_name\": \"Arsenic\",\n    \"cas_number\": \"7440-38-2\",\n    \"profile_year\": 2007,\n    \"substance_priority_list_rank\": 1,\n    \"health_effects\": \"Carcinogen, cardiovascular, neurological effects\",\n    \"primary_route_of_exposure\": \"ingestion\",\n    \"profile_url\": \"https://www.atsdr.cdc.gov/toxprofiles/tp2.pdf\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2650302e-d99c-48ee-b33b-b14f981fe98c",
+      "name": "Minimum Risk Levels",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ece50d53-1b03-4e48-ab25-4c83daad4038",
+          "name": "ATSDR List Minimum Risk Levels",
+          "request": {
+            "name": "ATSDR List Minimum Risk Levels",
+            "description": {
+              "content": "List ATSDR Minimum Risk Levels (MRLs) which are estimates of daily human exposure to hazardous substances that are unlikely to cause adverse health effects.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "mrls"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$limit",
+                  "value": "100",
+                  "description": "Maximum number of results to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "$offset",
+                  "value": "0",
+                  "description": "Offset for pagination."
+                },
+                {
+                  "disabled": false,
+                  "key": "substance_name",
+                  "value": "<string>",
+                  "description": "Filter by substance name."
+                },
+                {
+                  "disabled": false,
+                  "key": "route",
+                  "value": "<string>",
+                  "description": "Filter by exposure route."
+                },
+                {
+                  "disabled": false,
+                  "key": "duration",
+                  "value": "<string>",
+                  "description": "Filter by exposure duration."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4ddba1b4-1eb5-416a-9f3d-4086dedd4008",
+              "name": "List of minimum risk levels",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mrls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$limit",
+                      "value": "1"
+                    },
+                    {
+                      "key": "$offset",
+                      "value": "1"
+                    },
+                    {
+                      "key": "substance_name",
+                      "value": "Example Name"
+                    },
+                    {
+                      "key": "route",
+                      "value": "inhalation"
+                    },
+                    {
+                      "key": "duration",
+                      "value": "acute"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"substance_name\": \"Benzene\",\n    \"cas_number\": \"71-43-2\",\n    \"route\": \"inhalation\",\n    \"duration\": \"chronic\",\n    \"mrl_value\": 0.003,\n    \"mrl_unit\": \"ppm\",\n    \"year_updated\": 2007\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "d6bdfe22-b307-44a2-b34d-c142af8aa3ab",
+      "name": "Substance Priority List",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f8ab835a-8fbd-4cf8-96e3-ee318ed47568",
+          "name": "ATSDR List Substance Priority List",
+          "request": {
+            "name": "ATSDR List Substance Priority List",
+            "description": {
+              "content": "List substances from the ATSDR Substance Priority List (SPL), which ranks hazardous substances based on frequency, toxicity, and potential for human exposure at NPL sites.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "priority-list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$limit",
+                  "value": "100",
+                  "description": "Maximum number of results to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "$offset",
+                  "value": "0",
+                  "description": "Offset for pagination."
+                },
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<integer>",
+                  "description": "Filter by priority list year."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b1ce2a8b-c327-44c3-ba15-400342b255ee",
+              "name": "Prioritized list of hazardous substances",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "priority-list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$limit",
+                      "value": "1"
+                    },
+                    {
+                      "key": "$offset",
+                      "value": "1"
+                    },
+                    {
+                      "key": "year",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"rank\": 1,\n    \"substance_name\": \"Arsenic\",\n    \"cas_number\": \"7440-38-2\",\n    \"total_score\": 1672.52,\n    \"npl_frequency\": 1148,\n    \"toxicity_score\": 2,\n    \"year\": 2022\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "386d90e2-ded8-4221-a0a8-7c6844279619",
+      "name": "Exposure Investigations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b3c9b170-b230-4752-9916-4c5809ccedd8",
+          "name": "ATSDR List Exposure Investigations",
+          "request": {
+            "name": "ATSDR List Exposure Investigations",
+            "description": {
+              "content": "List ATSDR exposure investigations and health consultations conducted at hazardous waste sites and other environmental contamination sites.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "exposure-investigations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$limit",
+                  "value": "100",
+                  "description": "Maximum number of results to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "$offset",
+                  "value": "0",
+                  "description": "Offset for pagination."
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>",
+                  "description": "Filter by US state abbreviation."
+                },
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<integer>",
+                  "description": "Filter by investigation year."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f4f5018e-6156-43d9-8d0a-ac78b8f89aea",
+              "name": "List of exposure investigations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "exposure-investigations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$limit",
+                      "value": "1"
+                    },
+                    {
+                      "key": "$offset",
+                      "value": "1"
+                    },
+                    {
+                      "key": "state",
+                      "value": "example_value"
+                    },
+                    {
+                      "key": "year",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"site_name\": \"Love Canal\",\n    \"state\": \"NY\",\n    \"county\": \"Niagara\",\n    \"year\": 2022,\n    \"investigation_type\": \"Health Consultation\",\n    \"primary_contaminant\": \"Multiple chemicals\",\n    \"status\": \"completed\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://data.cdc.gov/resource",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "edf757b4-febf-4005-95ab-da2bfe78affc",
+    "name": "ATSDR Toxic Substance Profiles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The ATSDR Toxic Substance Profiles API provides access to toxicological profiles, minimum risk levels, and health guidance for hazardous substances. Data covers chemical hazards, health effects, exposure routes, and regulatory standards maintained by the Agency for Toxic Substances and Disease Registry.\n\nContact Support:\n Name: ATSDR",
+      "type": "text/plain"
+    }
+  }
+}
