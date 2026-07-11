@@ -41,6 +41,8 @@ apis:
       Access ATSDR toxicological profiles, minimum risk levels (MRLs), substance priority list rankings, and exposure
       investigation data for hazardous chemicals found at Superfund sites and in the environment.
 common:
+  - type: DomainSecurity
+    url: security/agency-for-toxic-substances-and-disease-registry-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/agency-for-toxic-substances-and-disease-registry
   - type: Website
