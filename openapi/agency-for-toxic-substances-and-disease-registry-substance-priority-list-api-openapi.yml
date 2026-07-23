@@ -1,0 +1,101 @@
+openapi: 3.1.0
+info:
+  title: ATSDR Toxic Substance Profiles Exposure Investigations Substance Priority List API
+  description: The ATSDR Toxic Substance Profiles API provides access to toxicological profiles, minimum risk levels, and health guidance for hazardous substances. Data covers chemical hazards, health effects, exposure routes, and regulatory standards maintained by the Agency for Toxic Substances and Disease Registry.
+  version: '1.0'
+  contact:
+    name: ATSDR
+    url: https://www.atsdr.cdc.gov/contact.html
+servers:
+- url: https://data.cdc.gov/resource
+  description: ATSDR Data via CDC Open Data Platform (Socrata)
+- url: https://www.atsdr.cdc.gov/api
+  description: ATSDR Direct API
+tags:
+- name: Substance Priority List
+paths:
+  /priority-list:
+    get:
+      operationId: list-substance-priority-list
+      summary: ATSDR List Substance Priority List
+      description: List substances from the ATSDR Substance Priority List (SPL), which ranks hazardous substances based on frequency, toxicity, and potential for human exposure at NPL sites.
+      tags:
+      - Substance Priority List
+      parameters:
+      - name: $limit
+        in: query
+        schema:
+          type: integer
+          default: 100
+        description: Maximum number of results to return.
+        example: 1
+      - name: $offset
+        in: query
+        schema:
+          type: integer
+          default: 0
+        description: Offset for pagination.
+        example: 1
+      - name: year
+        in: query
+        schema:
+          type: integer
+        description: Filter by priority list year.
+        example: 1
+      responses:
+        '200':
+          description: Prioritized list of hazardous substances
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubstancePriority'
+              examples:
+                ListPriorityResponse:
+                  summary: Substance priority list
+                  value:
+                  - rank: 1
+                    substance_name: Arsenic
+                    cas_number: 7440-38-2
+                    total_score: 1672.52
+                    npl_frequency: 1148
+                    toxicity_score: 2.0
+                    year: 2022
+                  x-microcks-default: true
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    SubstancePriority:
+      type: object
+      properties:
+        rank:
+          type: integer
+          description: Priority rank on the ATSDR Substance Priority List.
+          example: 1
+        substance_name:
+          type: string
+          description: Name of the substance.
+          example: Example Name
+        cas_number:
+          type: string
+          description: CAS registry number.
+          example: example_value
+        total_score:
+          type: number
+          description: Composite score used for ranking.
+          example: 99.99
+        npl_frequency:
+          type: integer
+          description: Number of NPL sites where substance was found.
+          example: 1
+        toxicity_score:
+          type: number
+          description: Toxicity component of the score.
+          example: 99.99
+        year:
+          type: integer
+          description: Priority list year.
+          example: 1

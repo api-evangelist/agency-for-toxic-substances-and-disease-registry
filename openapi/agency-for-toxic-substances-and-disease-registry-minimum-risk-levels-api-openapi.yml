@@ -1,0 +1,129 @@
+openapi: 3.1.0
+info:
+  title: ATSDR Toxic Substance Profiles Exposure Investigations Minimum Risk Levels API
+  description: The ATSDR Toxic Substance Profiles API provides access to toxicological profiles, minimum risk levels, and health guidance for hazardous substances. Data covers chemical hazards, health effects, exposure routes, and regulatory standards maintained by the Agency for Toxic Substances and Disease Registry.
+  version: '1.0'
+  contact:
+    name: ATSDR
+    url: https://www.atsdr.cdc.gov/contact.html
+servers:
+- url: https://data.cdc.gov/resource
+  description: ATSDR Data via CDC Open Data Platform (Socrata)
+- url: https://www.atsdr.cdc.gov/api
+  description: ATSDR Direct API
+tags:
+- name: Minimum Risk Levels
+paths:
+  /mrls:
+    get:
+      operationId: list-minimum-risk-levels
+      summary: ATSDR List Minimum Risk Levels
+      description: List ATSDR Minimum Risk Levels (MRLs) which are estimates of daily human exposure to hazardous substances that are unlikely to cause adverse health effects.
+      tags:
+      - Minimum Risk Levels
+      parameters:
+      - name: $limit
+        in: query
+        schema:
+          type: integer
+          default: 100
+        description: Maximum number of results to return.
+        example: 1
+      - name: $offset
+        in: query
+        schema:
+          type: integer
+          default: 0
+        description: Offset for pagination.
+        example: 1
+      - name: substance_name
+        in: query
+        schema:
+          type: string
+        description: Filter by substance name.
+        example: Example Name
+      - name: route
+        in: query
+        schema:
+          type: string
+          enum:
+          - inhalation
+          - oral
+          - dermal
+        description: Filter by exposure route.
+        example: inhalation
+      - name: duration
+        in: query
+        schema:
+          type: string
+          enum:
+          - acute
+          - intermediate
+          - chronic
+        description: Filter by exposure duration.
+        example: acute
+      responses:
+        '200':
+          description: List of minimum risk levels
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MinimumRiskLevel'
+              examples:
+                ListMRLsResponse:
+                  summary: List of minimum risk levels
+                  value:
+                  - substance_name: Benzene
+                    cas_number: 71-43-2
+                    route: inhalation
+                    duration: chronic
+                    mrl_value: 0.003
+                    mrl_unit: ppm
+                    year_updated: 2007
+                  x-microcks-default: true
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    MinimumRiskLevel:
+      type: object
+      properties:
+        substance_name:
+          type: string
+          description: Name of the hazardous substance.
+          example: Example Name
+        cas_number:
+          type: string
+          description: CAS registry number.
+          example: example_value
+        route:
+          type: string
+          enum:
+          - inhalation
+          - oral
+          - dermal
+          description: Exposure route.
+          example: inhalation
+        duration:
+          type: string
+          enum:
+          - acute
+          - intermediate
+          - chronic
+          description: Duration of exposure.
+          example: acute
+        mrl_value:
+          type: number
+          description: MRL value (units depend on route).
+          example: 99.99
+        mrl_unit:
+          type: string
+          description: Unit of measurement for the MRL value.
+          example: example_value
+        year_updated:
+          type: integer
+          description: Year the MRL was last updated.
+          example: 1
