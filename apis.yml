@@ -3,7 +3,19 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/agency-for-toxic-substances-and-disease-registry/refs/heads/main/apis.yml
 name: Agency for Toxic Substances and Disease Registry
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/agency-for-toxic-substances-and-disease-registry.png
 tags:
   - Diseases
   - Federal Government
@@ -20,26 +32,78 @@ created: '2024-11-21'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: agency-for-toxic-substances-and-disease-registry:atsdr-toxic-substance-profiles-api
-    name: ATSDR Toxic Substance Profiles API
-    tags:
-      - Toxicology
-      - Hazardous Substances
-      - Public Health
-      - Environmental Health
-    humanURL: https://www.atsdr.cdc.gov/substances/index.asp
-    baseURL: https://data.cdc.gov/resource
-    properties:
-      - url: https://www.atsdr.cdc.gov/substances/index.asp
-        type: Documentation
-      - url: https://www.atsdr.cdc.gov/mrls/index.asp
-        type: Documentation
-      - url: >-
-          https://raw.githubusercontent.com/api-evangelist/agency-for-toxic-substances-and-disease-registry/refs/heads/main/openapi/atsdr-toxic-substance-profiles-openapi.yml
-        type: OpenAPI
-    description: >-
-      Access ATSDR toxicological profiles, minimum risk levels (MRLs), substance priority list rankings, and exposure
-      investigation data for hazardous chemicals found at Superfund sites and in the environment.
+- aid: >-
+    agency-for-toxic-substances-and-disease-registry:agency-for-toxic-substances-and-disease-registry-exposure-investigations-api
+  name: Agency for Toxic Substances and Disease Registry Exposure Investigations API
+  description: >-
+    The Exposure Investigations API from Agency for Toxic Substances and Disease Registry — 1 operation(s)
+    for exposure investigations.
+  humanURL: https://www.atsdr.cdc.gov/substances/index.asp
+  baseURL: https://data.cdc.gov/resource
+  tags:
+  - Exposure Investigations
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/agency-for-toxic-substances-and-disease-registry-exposure-investigations-api-openapi.yml
+  - type: Documentation
+    url: https://www.atsdr.cdc.gov/substances/index.asp
+  - type: Documentation
+    url: https://www.atsdr.cdc.gov/mrls/index.asp
+- aid: >-
+    agency-for-toxic-substances-and-disease-registry:agency-for-toxic-substances-and-disease-registry-minimum-risk-levels-api
+  name: Agency for Toxic Substances and Disease Registry Minimum Risk Levels API
+  description: >-
+    The Minimum Risk Levels API from Agency for Toxic Substances and Disease Registry — 1 operation(s)
+    for minimum risk levels.
+  humanURL: https://www.atsdr.cdc.gov/substances/index.asp
+  baseURL: https://data.cdc.gov/resource
+  tags:
+  - Minimum Risk Levels
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/agency-for-toxic-substances-and-disease-registry-minimum-risk-levels-api-openapi.yml
+  - type: Documentation
+    url: https://www.atsdr.cdc.gov/substances/index.asp
+  - type: Documentation
+    url: https://www.atsdr.cdc.gov/mrls/index.asp
+- aid: >-
+    agency-for-toxic-substances-and-disease-registry:agency-for-toxic-substances-and-disease-registry-substance-priority-list-api
+  name: Agency for Toxic Substances and Disease Registry Substance Priority List API
+  description: >-
+    The Substance Priority List API from Agency for Toxic Substances and Disease Registry — 1 operation(s)
+    for substance priority list.
+  humanURL: https://www.atsdr.cdc.gov/substances/index.asp
+  baseURL: https://data.cdc.gov/resource
+  tags:
+  - Substance Priority List
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/agency-for-toxic-substances-and-disease-registry-substance-priority-list-api-openapi.yml
+  - type: Documentation
+    url: https://www.atsdr.cdc.gov/substances/index.asp
+  - type: Documentation
+    url: https://www.atsdr.cdc.gov/mrls/index.asp
+- aid: >-
+    agency-for-toxic-substances-and-disease-registry:agency-for-toxic-substances-and-disease-registry-toxicological-profiles-api
+  name: Agency for Toxic Substances and Disease Registry Toxicological Profiles API
+  description: >-
+    The Toxicological Profiles API from Agency for Toxic Substances and Disease Registry — 1 operation(s)
+    for toxicological profiles.
+  humanURL: https://www.atsdr.cdc.gov/substances/index.asp
+  baseURL: https://data.cdc.gov/resource
+  tags:
+  - Toxicological Profiles
+  properties:
+  - type: OpenAPI
+    url: >-
+      openapi/agency-for-toxic-substances-and-disease-registry-toxicological-profiles-api-openapi.yml
+  - type: Documentation
+    url: https://www.atsdr.cdc.gov/substances/index.asp
+  - type: Documentation
+    url: https://www.atsdr.cdc.gov/mrls/index.asp
 common:
   - type: AgenticAccess
     url: agentic-access/agency-for-toxic-substances-and-disease-registry-agentic-access.yml
