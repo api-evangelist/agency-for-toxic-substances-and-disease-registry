@@ -1,0 +1,20 @@
+{
+  "provider": "agency-for-toxic-substances-and-disease-registry",
+  "sources": [
+    "agency-for-toxic-substances-and-disease-registry-exposure-investigations-api-openapi.yml",
+    "agency-for-toxic-substances-and-disease-registry-minimum-risk-levels-api-openapi.yml",
+    "agency-for-toxic-substances-and-disease-registry-substance-priority-list-api-openapi.yml",
+    "agency-for-toxic-substances-and-disease-registry-toxicological-profiles-api-openapi.yml"
+  ],
+  "outputs": [
+    "agency-for-toxic-substances-and-disease-registry-exposure-investigations-api-openapi.yml",
+    "agency-for-toxic-substances-and-disease-registry-minimum-risk-levels-api-openapi.yml",
+    "agency-for-toxic-substances-and-disease-registry-substance-priority-list-api-openapi.yml",
+    "agency-for-toxic-substances-and-disease-registry-toxicological-profiles-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

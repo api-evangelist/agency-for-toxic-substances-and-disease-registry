@@ -1,0 +1,389 @@
+openapi: 3.1.0
+info:
+  title: ATSDR Toxic Substance Profiles API
+  description: >-
+    The ATSDR Toxic Substance Profiles API provides access to toxicological profiles,
+    minimum risk levels, and health guidance for hazardous substances. Data covers
+    chemical hazards, health effects, exposure routes, and regulatory standards
+    maintained by the Agency for Toxic Substances and Disease Registry.
+  version: "1.0"
+  contact:
+    name: ATSDR
+    url: https://www.atsdr.cdc.gov/contact.html
+servers:
+- url: https://data.cdc.gov/resource
+  description: ATSDR Data via CDC Open Data Platform (Socrata)
+- url: https://www.atsdr.cdc.gov/api
+  description: ATSDR Direct API
+
+paths:
+  /toxprofiles:
+    get:
+      operationId: list-toxicological-profiles
+      summary: ATSDR List Toxicological Profiles
+      description: List ATSDR toxicological profiles for hazardous substances including health effects and exposure information.
+      tags:
+      - Toxicological Profiles
+      parameters:
+      - name: $limit
+        in: query
+        schema:
+          type: integer
+          default: 100
+        description: Maximum number of results to return.
+        example: 1
+      - name: $offset
+        in: query
+        schema:
+          type: integer
+          default: 0
+        description: Offset for pagination.
+        example: 1
+      - name: substance_name
+        in: query
+        schema:
+          type: string
+        description: Filter by substance name.
+        example: Example Name
+      - name: cas_number
+        in: query
+        schema:
+          type: string
+        description: Filter by CAS registry number.
+        example: example_value
+      responses:
+        '200':
+          description: List of toxicological profiles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ToxProfile'
+              examples:
+                ListToxProfilesResponse:
+                  summary: List of toxicological profiles
+                  value:
+                  - substance_name: "Arsenic"
+                    cas_number: "7440-38-2"
+                    profile_year: 2007
+                    substance_priority_list_rank: 1
+                    health_effects: "Carcinogen, cardiovascular, neurological effects"
+                    primary_route_of_exposure: "ingestion"
+                    profile_url: "https://www.atsdr.cdc.gov/toxprofiles/tp2.pdf"
+                  x-microcks-default: true
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+
+  /mrls:
+    get:
+      operationId: list-minimum-risk-levels
+      summary: ATSDR List Minimum Risk Levels
+      description: List ATSDR Minimum Risk Levels (MRLs) which are estimates of daily human exposure to hazardous substances that are unlikely to cause adverse health effects.
+      tags:
+      - Minimum Risk Levels
+      parameters:
+      - name: $limit
+        in: query
+        schema:
+          type: integer
+          default: 100
+        description: Maximum number of results to return.
+        example: 1
+      - name: $offset
+        in: query
+        schema:
+          type: integer
+          default: 0
+        description: Offset for pagination.
+        example: 1
+      - name: substance_name
+        in: query
+        schema:
+          type: string
+        description: Filter by substance name.
+        example: Example Name
+      - name: route
+        in: query
+        schema:
+          type: string
+          enum: [inhalation, oral, dermal]
+        description: Filter by exposure route.
+        example: inhalation
+      - name: duration
+        in: query
+        schema:
+          type: string
+          enum: [acute, intermediate, chronic]
+        description: Filter by exposure duration.
+        example: acute
+      responses:
+        '200':
+          description: List of minimum risk levels
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MinimumRiskLevel'
+              examples:
+                ListMRLsResponse:
+                  summary: List of minimum risk levels
+                  value:
+                  - substance_name: "Benzene"
+                    cas_number: "71-43-2"
+                    route: "inhalation"
+                    duration: "chronic"
+                    mrl_value: 0.003
+                    mrl_unit: "ppm"
+                    year_updated: 2007
+                  x-microcks-default: true
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+
+  /priority-list:
+    get:
+      operationId: list-substance-priority-list
+      summary: ATSDR List Substance Priority List
+      description: List substances from the ATSDR Substance Priority List (SPL), which ranks hazardous substances based on frequency, toxicity, and potential for human exposure at NPL sites.
+      tags:
+      - Substance Priority List
+      parameters:
+      - name: $limit
+        in: query
+        schema:
+          type: integer
+          default: 100
+        description: Maximum number of results to return.
+        example: 1
+      - name: $offset
+        in: query
+        schema:
+          type: integer
+          default: 0
+        description: Offset for pagination.
+        example: 1
+      - name: year
+        in: query
+        schema:
+          type: integer
+        description: Filter by priority list year.
+        example: 1
+      responses:
+        '200':
+          description: Prioritized list of hazardous substances
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubstancePriority'
+              examples:
+                ListPriorityResponse:
+                  summary: Substance priority list
+                  value:
+                  - rank: 1
+                    substance_name: "Arsenic"
+                    cas_number: "7440-38-2"
+                    total_score: 1672.52
+                    npl_frequency: 1148
+                    toxicity_score: 2.0
+                    year: 2022
+                  x-microcks-default: true
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+
+  /exposure-investigations:
+    get:
+      operationId: list-exposure-investigations
+      summary: ATSDR List Exposure Investigations
+      description: List ATSDR exposure investigations and health consultations conducted at hazardous waste sites and other environmental contamination sites.
+      tags:
+      - Exposure Investigations
+      parameters:
+      - name: $limit
+        in: query
+        schema:
+          type: integer
+          default: 100
+        description: Maximum number of results to return.
+        example: 1
+      - name: $offset
+        in: query
+        schema:
+          type: integer
+          default: 0
+        description: Offset for pagination.
+        example: 1
+      - name: state
+        in: query
+        schema:
+          type: string
+        description: Filter by US state abbreviation.
+        example: example_value
+      - name: year
+        in: query
+        schema:
+          type: integer
+        description: Filter by investigation year.
+        example: 1
+      responses:
+        '200':
+          description: List of exposure investigations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExposureInvestigation'
+              examples:
+                ListExposureResponse:
+                  summary: Exposure investigations list
+                  value:
+                  - site_name: "Love Canal"
+                    state: "NY"
+                    county: "Niagara"
+                    year: 2022
+                    investigation_type: "Health Consultation"
+                    primary_contaminant: "Multiple chemicals"
+                    status: completed
+                  x-microcks-default: true
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+
+components:
+  schemas:
+    ToxProfile:
+      type: object
+      properties:
+        substance_name:
+          type: string
+          description: Name of the hazardous substance.
+          example: Example Name
+        cas_number:
+          type: string
+          description: Chemical Abstracts Service registry number.
+          example: example_value
+        profile_year:
+          type: integer
+          description: Year the toxicological profile was published or updated.
+          example: 1
+        substance_priority_list_rank:
+          type: integer
+          description: Rank on the ATSDR Substance Priority List.
+          example: 1
+        health_effects:
+          type: string
+          description: Summary of known health effects from exposure.
+          example: example_value
+        primary_route_of_exposure:
+          type: string
+          description: Most common route of exposure (ingestion, inhalation, dermal).
+          example: example_value
+        profile_url:
+          type: string
+          description: URL to the full toxicological profile PDF.
+
+          example: https://example.com
+    MinimumRiskLevel:
+      type: object
+      properties:
+        substance_name:
+          type: string
+          description: Name of the hazardous substance.
+          example: Example Name
+        cas_number:
+          type: string
+          description: CAS registry number.
+          example: example_value
+        route:
+          type: string
+          enum: [inhalation, oral, dermal]
+          description: Exposure route.
+          example: inhalation
+        duration:
+          type: string
+          enum: [acute, intermediate, chronic]
+          description: Duration of exposure.
+          example: acute
+        mrl_value:
+          type: number
+          description: MRL value (units depend on route).
+          example: 99.99
+        mrl_unit:
+          type: string
+          description: Unit of measurement for the MRL value.
+          example: example_value
+        year_updated:
+          type: integer
+          description: Year the MRL was last updated.
+
+          example: 1
+    SubstancePriority:
+      type: object
+      properties:
+        rank:
+          type: integer
+          description: Priority rank on the ATSDR Substance Priority List.
+          example: 1
+        substance_name:
+          type: string
+          description: Name of the substance.
+          example: Example Name
+        cas_number:
+          type: string
+          description: CAS registry number.
+          example: example_value
+        total_score:
+          type: number
+          description: Composite score used for ranking.
+          example: 99.99
+        npl_frequency:
+          type: integer
+          description: Number of NPL sites where substance was found.
+          example: 1
+        toxicity_score:
+          type: number
+          description: Toxicity component of the score.
+          example: 99.99
+        year:
+          type: integer
+          description: Priority list year.
+
+          example: 1
+    ExposureInvestigation:
+      type: object
+      properties:
+        site_name:
+          type: string
+          description: Name of the contaminated site.
+          example: Example Name
+        state:
+          type: string
+          description: US state abbreviation.
+          example: example_value
+        county:
+          type: string
+          description: County name.
+          example: example_value
+        year:
+          type: integer
+          description: Year of the investigation.
+          example: 1
+        investigation_type:
+          type: string
+          description: Type of investigation (Health Consultation, Public Health Assessment, etc.).
+          example: example_value
+        primary_contaminant:
+          type: string
+          description: Primary hazardous substance involved.
+          example: example_value
+        status:
+          type: string
+          enum: [completed, ongoing, pending]
+          description: Investigation status.
+          example: completed
