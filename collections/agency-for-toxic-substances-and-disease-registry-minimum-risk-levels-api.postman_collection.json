@@ -1,0 +1,154 @@
+{
+  "item": [
+    {
+      "id": "cdea9708-3257-420a-9c43-ed9eddff5464",
+      "name": "Minimum Risk Levels",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f2975229-d01a-447e-b3ef-3f3b52df9553",
+          "name": "ATSDR List Minimum Risk Levels",
+          "request": {
+            "name": "ATSDR List Minimum Risk Levels",
+            "description": {
+              "content": "List ATSDR Minimum Risk Levels (MRLs) which are estimates of daily human exposure to hazardous substances that are unlikely to cause adverse health effects.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "mrls"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$limit",
+                  "value": "100",
+                  "description": "Maximum number of results to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "$offset",
+                  "value": "0",
+                  "description": "Offset for pagination."
+                },
+                {
+                  "disabled": false,
+                  "key": "substance_name",
+                  "value": "<string>",
+                  "description": "Filter by substance name."
+                },
+                {
+                  "disabled": false,
+                  "key": "route",
+                  "value": "<string>",
+                  "description": "Filter by exposure route."
+                },
+                {
+                  "disabled": false,
+                  "key": "duration",
+                  "value": "<string>",
+                  "description": "Filter by exposure duration."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cbb41117-0b0c-4cab-b588-c47f297da2d5",
+              "name": "List of minimum risk levels",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mrls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$limit",
+                      "value": "1"
+                    },
+                    {
+                      "key": "$offset",
+                      "value": "1"
+                    },
+                    {
+                      "key": "substance_name",
+                      "value": "Example Name"
+                    },
+                    {
+                      "key": "route",
+                      "value": "inhalation"
+                    },
+                    {
+                      "key": "duration",
+                      "value": "acute"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"substance_name\": \"Benzene\",\n    \"cas_number\": \"71-43-2\",\n    \"route\": \"inhalation\",\n    \"duration\": \"chronic\",\n    \"mrl_value\": 0.003,\n    \"mrl_unit\": \"ppm\",\n    \"year_updated\": 2007\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://data.cdc.gov/resource",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "513cde54-319a-4520-8d1c-53845325e641",
+    "name": "ATSDR Toxic Substance Profiles Exposure Investigations Minimum Risk Levels API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The ATSDR Toxic Substance Profiles API provides access to toxicological profiles, minimum risk levels, and health guidance for hazardous substances. Data covers chemical hazards, health effects, exposure routes, and regulatory standards maintained by the Agency for Toxic Substances and Disease Registry.\n\nContact Support:\n Name: ATSDR",
+      "type": "text/plain"
+    }
+  }
+}

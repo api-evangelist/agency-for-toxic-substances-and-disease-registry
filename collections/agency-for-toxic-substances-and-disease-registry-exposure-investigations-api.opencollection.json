@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ATSDR Toxic Substance Profiles Exposure Investigations API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Exposure Investigations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ATSDR List Exposure Investigations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://data.cdc.gov/resource/exposure-investigations",
+            "params": [
+              {
+                "name": "$limit",
+                "value": "1",
+                "type": "query",
+                "description": "Maximum number of results to return."
+              },
+              {
+                "name": "$offset",
+                "value": "1",
+                "type": "query",
+                "description": "Offset for pagination."
+              },
+              {
+                "name": "state",
+                "value": "example_value",
+                "type": "query",
+                "description": "Filter by US state abbreviation."
+              },
+              {
+                "name": "year",
+                "value": "1",
+                "type": "query",
+                "description": "Filter by investigation year."
+              }
+            ]
+          },
+          "docs": "List ATSDR exposure investigations and health consultations conducted at hazardous waste sites and other environmental contamination sites."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

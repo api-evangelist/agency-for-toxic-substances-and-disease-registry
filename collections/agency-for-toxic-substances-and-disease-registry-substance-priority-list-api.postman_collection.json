@@ -1,0 +1,134 @@
+{
+  "item": [
+    {
+      "id": "cb4f96af-6f07-444b-8c8f-ff969324d9df",
+      "name": "Substance Priority List",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "59b0cc40-c605-4b86-b213-1b1109daaab7",
+          "name": "ATSDR List Substance Priority List",
+          "request": {
+            "name": "ATSDR List Substance Priority List",
+            "description": {
+              "content": "List substances from the ATSDR Substance Priority List (SPL), which ranks hazardous substances based on frequency, toxicity, and potential for human exposure at NPL sites.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "priority-list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$limit",
+                  "value": "100",
+                  "description": "Maximum number of results to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "$offset",
+                  "value": "0",
+                  "description": "Offset for pagination."
+                },
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<integer>",
+                  "description": "Filter by priority list year."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b5efc149-1788-4afe-9491-de6fd5ac738b",
+              "name": "Prioritized list of hazardous substances",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "priority-list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$limit",
+                      "value": "1"
+                    },
+                    {
+                      "key": "$offset",
+                      "value": "1"
+                    },
+                    {
+                      "key": "year",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"rank\": 1,\n    \"substance_name\": \"Arsenic\",\n    \"cas_number\": \"7440-38-2\",\n    \"total_score\": 1672.52,\n    \"npl_frequency\": 1148,\n    \"toxicity_score\": 2,\n    \"year\": 2022\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://data.cdc.gov/resource",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2b2e4fbd-e082-4e80-8905-99047056b3d9",
+    "name": "ATSDR Toxic Substance Profiles Exposure Investigations Substance Priority List API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The ATSDR Toxic Substance Profiles API provides access to toxicological profiles, minimum risk levels, and health guidance for hazardous substances. Data covers chemical hazards, health effects, exposure routes, and regulatory standards maintained by the Agency for Toxic Substances and Disease Registry.\n\nContact Support:\n Name: ATSDR",
+      "type": "text/plain"
+    }
+  }
+}

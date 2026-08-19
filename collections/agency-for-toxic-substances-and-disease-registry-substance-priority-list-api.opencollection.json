@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ATSDR Toxic Substance Profiles Exposure Investigations Substance Priority List API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Substance Priority List",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ATSDR List Substance Priority List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://data.cdc.gov/resource/priority-list",
+            "params": [
+              {
+                "name": "$limit",
+                "value": "1",
+                "type": "query",
+                "description": "Maximum number of results to return."
+              },
+              {
+                "name": "$offset",
+                "value": "1",
+                "type": "query",
+                "description": "Offset for pagination."
+              },
+              {
+                "name": "year",
+                "value": "1",
+                "type": "query",
+                "description": "Filter by priority list year."
+              }
+            ]
+          },
+          "docs": "List substances from the ATSDR Substance Priority List (SPL), which ranks hazardous substances based on frequency, toxicity, and potential for human exposure at NPL sites."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

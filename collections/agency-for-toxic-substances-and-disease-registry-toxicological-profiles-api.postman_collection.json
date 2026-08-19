@@ -1,0 +1,144 @@
+{
+  "item": [
+    {
+      "id": "fa6d6d9a-ee34-409c-b690-507968ff3328",
+      "name": "Toxicological Profiles",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "071929c5-8994-4047-a371-d045a22b8e70",
+          "name": "ATSDR List Toxicological Profiles",
+          "request": {
+            "name": "ATSDR List Toxicological Profiles",
+            "description": {
+              "content": "List ATSDR toxicological profiles for hazardous substances including health effects and exposure information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "toxprofiles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$limit",
+                  "value": "100",
+                  "description": "Maximum number of results to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "$offset",
+                  "value": "0",
+                  "description": "Offset for pagination."
+                },
+                {
+                  "disabled": false,
+                  "key": "substance_name",
+                  "value": "<string>",
+                  "description": "Filter by substance name."
+                },
+                {
+                  "disabled": false,
+                  "key": "cas_number",
+                  "value": "<string>",
+                  "description": "Filter by CAS registry number."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0ae21fe3-2d6e-4da3-b89f-e39d52d6894e",
+              "name": "List of toxicological profiles",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "toxprofiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$limit",
+                      "value": "1"
+                    },
+                    {
+                      "key": "$offset",
+                      "value": "1"
+                    },
+                    {
+                      "key": "substance_name",
+                      "value": "Example Name"
+                    },
+                    {
+                      "key": "cas_number",
+                      "value": "example_value"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"substance_name\": \"Arsenic\",\n    \"cas_number\": \"7440-38-2\",\n    \"profile_year\": 2007,\n    \"substance_priority_list_rank\": 1,\n    \"health_effects\": \"Carcinogen, cardiovascular, neurological effects\",\n    \"primary_route_of_exposure\": \"ingestion\",\n    \"profile_url\": \"https://www.atsdr.cdc.gov/toxprofiles/tp2.pdf\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://data.cdc.gov/resource",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f0b6f060-fb45-4cd9-be88-60b8c6b9902f",
+    "name": "ATSDR Toxic Substance Profiles Exposure Investigations Toxicological Profiles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The ATSDR Toxic Substance Profiles API provides access to toxicological profiles, minimum risk levels, and health guidance for hazardous substances. Data covers chemical hazards, health effects, exposure routes, and regulatory standards maintained by the Agency for Toxic Substances and Disease Registry.\n\nContact Support:\n Name: ATSDR",
+      "type": "text/plain"
+    }
+  }
+}

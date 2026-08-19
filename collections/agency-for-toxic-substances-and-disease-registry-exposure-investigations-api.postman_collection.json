@@ -1,0 +1,144 @@
+{
+  "item": [
+    {
+      "id": "6cdd0fac-86b0-40f9-931e-c0f4cd640581",
+      "name": "Exposure Investigations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "556a4faf-4cec-44df-a91f-acbcfe351b2d",
+          "name": "ATSDR List Exposure Investigations",
+          "request": {
+            "name": "ATSDR List Exposure Investigations",
+            "description": {
+              "content": "List ATSDR exposure investigations and health consultations conducted at hazardous waste sites and other environmental contamination sites.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "exposure-investigations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$limit",
+                  "value": "100",
+                  "description": "Maximum number of results to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "$offset",
+                  "value": "0",
+                  "description": "Offset for pagination."
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>",
+                  "description": "Filter by US state abbreviation."
+                },
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<integer>",
+                  "description": "Filter by investigation year."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "55b2bd0a-9831-4525-83cd-b33b564b6d0c",
+              "name": "List of exposure investigations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "exposure-investigations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$limit",
+                      "value": "1"
+                    },
+                    {
+                      "key": "$offset",
+                      "value": "1"
+                    },
+                    {
+                      "key": "state",
+                      "value": "example_value"
+                    },
+                    {
+                      "key": "year",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"site_name\": \"Love Canal\",\n    \"state\": \"NY\",\n    \"county\": \"Niagara\",\n    \"year\": 2022,\n    \"investigation_type\": \"Health Consultation\",\n    \"primary_contaminant\": \"Multiple chemicals\",\n    \"status\": \"completed\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://data.cdc.gov/resource",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "057a7f06-26a2-4f4d-b460-2a381b37d0a0",
+    "name": "ATSDR Toxic Substance Profiles Exposure Investigations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The ATSDR Toxic Substance Profiles API provides access to toxicological profiles, minimum risk levels, and health guidance for hazardous substances. Data covers chemical hazards, health effects, exposure routes, and regulatory standards maintained by the Agency for Toxic Substances and Disease Registry.\n\nContact Support:\n Name: ATSDR",
+      "type": "text/plain"
+    }
+  }
+}

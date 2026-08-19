@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ATSDR Toxic Substance Profiles Exposure Investigations Minimum Risk Levels API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Minimum Risk Levels",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ATSDR List Minimum Risk Levels",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://data.cdc.gov/resource/mrls",
+            "params": [
+              {
+                "name": "$limit",
+                "value": "1",
+                "type": "query",
+                "description": "Maximum number of results to return."
+              },
+              {
+                "name": "$offset",
+                "value": "1",
+                "type": "query",
+                "description": "Offset for pagination."
+              },
+              {
+                "name": "substance_name",
+                "value": "Example Name",
+                "type": "query",
+                "description": "Filter by substance name."
+              },
+              {
+                "name": "route",
+                "value": "inhalation",
+                "type": "query",
+                "description": "Filter by exposure route."
+              },
+              {
+                "name": "duration",
+                "value": "acute",
+                "type": "query",
+                "description": "Filter by exposure duration."
+              }
+            ]
+          },
+          "docs": "List ATSDR Minimum Risk Levels (MRLs) which are estimates of daily human exposure to hazardous substances that are unlikely to cause adverse health effects."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
