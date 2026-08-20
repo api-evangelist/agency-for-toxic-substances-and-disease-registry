@@ -18,6 +18,13 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/agency-for-toxic-substances-and-disease-registry.png
 tags:
   - Diseases
+  - Federal-Government
+  - Public Health
+  - Toxic Substances
+  - Environmental Health
+  - Hazardous Materials
+tags_raw:
+  - Diseases
   - Federal Government
   - Public Health
   - Toxic Substances
