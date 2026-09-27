@@ -29,7 +29,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/agency-for-toxic-substances-and-disease-registry.png
 tags:
   - Diseases
-  - Federal-Government
+  - Federal Government
   - Public Health
   - Toxic Substances
   - Environmental Health
@@ -41,6 +41,7 @@ tags_raw:
   - Toxic Substances
   - Environmental Health
   - Hazardous Materials
+  - Federal-Government
 description: >-
   ATSDR protects communities from harmful health effects related to exposure to natural and man-made hazardous
   substances. It is a federal public health agency within the U.S. Department of Health and Human Services. ATSDR
