@@ -1,4 +1,4 @@
-# Agency for Toxic Substances and Disease Registry (agency-for-toxic-substances-and-disease-registry)
+# Agency for Toxic Substances and Disease Registry
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,67 +66,166 @@
 
 ATSDR protects communities from harmful health effects related to exposure to natural and man-made hazardous substances. It is a federal public health agency within the U.S. Department of Health and Human Services. ATSDR provides toxicological profiles, minimum risk levels, substance priority rankings, and exposure investigation data for hazardous chemicals.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/agency-for-toxic-substances-and-disease-registry/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/agency-for-toxic-substances-and-disease-registry/refs/heads/main/apis.yml)
+**Areas:** Diseases · Federal Government · Public Health · Toxic Substances · Environmental Health · Hazardous Materials
 
-## Scope
+## Agency for Toxic Substances and Disease Registry on APIs.io
 
-- **Type:** Index
+Everything profiled for Agency for Toxic Substances and Disease Registry is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/agency-for-toxic-substances-and-disease-registry/](https://apis.io/providers/agency-for-toxic-substances-and-disease-registry/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (4)
 
-- Diseases
-- Federal Government
-- Public Health
-- Toxic Substances
-- Environmental Health
-- Hazardous Materials
+- [Agency for Toxic Substances and Disease Registry Exposure Investigations API](https://apis.io/apis/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-exposure-investigations-api/) — The Exposure Investigations API from Agency for Toxic Substances and Disease Registry — 1 operation(s) for exposure investigations.
+- [Agency for Toxic Substances and Disease Registry Minimum Risk Levels API](https://apis.io/apis/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-minimum-risk-levels-api/) — The Minimum Risk Levels API from Agency for Toxic Substances and Disease Registry — 1 operation(s) for minimum risk levels.
+- [Agency for Toxic Substances and Disease Registry Substance Priority List API](https://apis.io/apis/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-substance-priority-list-api/) — The Substance Priority List API from Agency for Toxic Substances and Disease Registry — 1 operation(s) for substance priority list.
+- [Agency for Toxic Substances and Disease Registry Toxicological Profiles API](https://apis.io/apis/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-toxicological-profiles-api/) — The Toxicological Profiles API from Agency for Toxic Substances and Disease Registry — 1 operation(s) for toxicological profiles.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-11-21
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### ATSDR Toxic Substance Profiles API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Access ATSDR toxicological profiles, minimum risk levels (MRLs), substance priority list rankings, and exposure investigation data for hazardous chemicals found at Superfund sites and in the environment.
+- [Agency For Toxic Substances And Disease Registry Agentic Access](https://apis.io/agentic-access/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-agentic-access/)
 
-- **Human URL:** [https://www.atsdr.cdc.gov/substances/index.asp](https://www.atsdr.cdc.gov/substances/index.asp)
-- **Base URL:** `https://data.cdc.gov/resource`
+#### JSON Schema (4)
 
-#### Tags
+The data models the API reads and writes.
 
-- Toxicology
-- Hazardous Substances
-- Public Health
-- Environmental Health
+- [ExposureInvestigation](https://apis.io/schemas/agency-for-toxic-substances-and-disease-registry/atsdr-toxic-substance-profiles-exposure-investigation/)
+- [MinimumRiskLevel](https://apis.io/schemas/agency-for-toxic-substances-and-disease-registry/atsdr-toxic-substance-profiles-minimum-risk-level/)
+- [SubstancePriority](https://apis.io/schemas/agency-for-toxic-substances-and-disease-registry/atsdr-toxic-substance-profiles-substance-priority/)
+- [ToxProfile](https://apis.io/schemas/agency-for-toxic-substances-and-disease-registry/atsdr-toxic-substance-profiles-tox-profile/)
 
-#### Properties
+#### JSON Structure (4)
 
-- [Documentation](https://www.atsdr.cdc.gov/substances/index.asp)
-- [Documentation](https://www.atsdr.cdc.gov/mrls/index.asp)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/agency-for-toxic-substances-and-disease-registry/refs/heads/main/openapi/atsdr-toxic-substance-profiles-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/atsdr-toxic-substance-profiles.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/atsdr-toxic-substance-profiles.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Data models expressed in JSON Structure.
 
-## Common Properties
+- [Atsdr Toxic Substance Profiles Exposure Investigation Structure](https://apis.io/json-structure/agency-for-toxic-substances-and-disease-registry/atsdr-toxic-substance-profiles-exposure-investigation-structure/)
+- [Atsdr Toxic Substance Profiles Minimum Risk Level Structure](https://apis.io/json-structure/agency-for-toxic-substances-and-disease-registry/atsdr-toxic-substance-profiles-minimum-risk-level-structure/)
+- [Atsdr Toxic Substance Profiles Substance Priority Structure](https://apis.io/json-structure/agency-for-toxic-substances-and-disease-registry/atsdr-toxic-substance-profiles-substance-priority-structure/)
+- [Atsdr Toxic Substance Profiles Tox Profile Structure](https://apis.io/json-structure/agency-for-toxic-substances-and-disease-registry/atsdr-toxic-substance-profiles-tox-profile-structure/)
 
-- [LinkedIn](https://www.linkedin.com/company/agency-for-toxic-substances-and-disease-registry)
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Agency For Toxic Substances And Disease Registry Atsdr Context](https://apis.io/jsonld/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-atsdr-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Atsdr Vocabulary](https://apis.io/vocabularies/agency-for-toxic-substances-and-disease-registry/atsdr-vocabulary/)
+
+#### Examples (4)
+
+Example requests and responses.
+
+- [Atsdr Toxic Substance Profiles Exposure Investigation Example](https://apis.io/examples/agency-for-toxic-substances-and-disease-registry/atsdr-toxic-substance-profiles-exposure-investigation-example/)
+- [Atsdr Toxic Substance Profiles Minimum Risk Level Example](https://apis.io/examples/agency-for-toxic-substances-and-disease-registry/atsdr-toxic-substance-profiles-minimum-risk-level-example/)
+- [Atsdr Toxic Substance Profiles Substance Priority Example](https://apis.io/examples/agency-for-toxic-substances-and-disease-registry/atsdr-toxic-substance-profiles-substance-priority-example/)
+- [Atsdr Toxic Substance Profiles Tox Profile Example](https://apis.io/examples/agency-for-toxic-substances-and-disease-registry/atsdr-toxic-substance-profiles-tox-profile-example/)
+
+#### Collections (5)
+
+Postman and Open Collection request collections.
+
+- [ATSDR Toxic Substance Profiles Exposure Investigations API](https://apis.io/collections/agency-for-toxic-substances-and-disease-registry/open-agency-for-toxic-substances-and-disease-registry-exposure-investigations-api/)
+- [ATSDR Toxic Substance Profiles Exposure Investigations Minimum Risk Levels API](https://apis.io/collections/agency-for-toxic-substances-and-disease-registry/open-agency-for-toxic-substances-and-disease-registry-minimum-risk-levels-api/)
+- [ATSDR Toxic Substance Profiles Exposure Investigations Substance Priority List API](https://apis.io/collections/agency-for-toxic-substances-and-disease-registry/open-agency-for-toxic-substances-and-disease-registry-substance-priority-list-api/)
+- [ATSDR Toxic Substance Profiles Exposure Investigations Toxicological Profiles API](https://apis.io/collections/agency-for-toxic-substances-and-disease-registry/open-agency-for-toxic-substances-and-disease-registry-toxicological-profiles-api/)
+- [ATSDR Toxic Substance Profiles API](https://apis.io/collections/agency-for-toxic-substances-and-disease-registry/open-atsdr-toxic-substance-profiles/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Agency for Toxic Substances and Disease Registry — jsonschema rules](https://apis.io/rules/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-jsonschema-spectral-rules/)
+- [Agency for Toxic Substances and Disease Registry API Rules](https://apis.io/rules/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-spectral-rules/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Agency For Toxic Substances And Disease Registry Domain Security](https://apis.io/security/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Agency For Toxic Substances And Disease Registry Plans Pricing](https://apis.io/plans/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Agency For Toxic Substances And Disease Registry Rate Limits](https://apis.io/rate-limits/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Agency For Toxic Substances And Disease Registry Finops](https://apis.io/finops/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.atsdr.cdc.gov/)
-- [Portal](https://www.atsdr.cdc.gov/api)
-- [Data Portal](https://data.cdc.gov/browse?category=Environmental+Health)
-- [Getting Started](https://www.atsdr.cdc.gov/substances/index.asp)
 - [Documentation](https://www.atsdr.cdc.gov/mrls/index.asp)
-- [Documentation](https://www.atsdr.cdc.gov/spl/index.html)
-- [F O I A](https://www.hhs.gov/foia/index.html)
-- [Spectral Rules](https://raw.githubusercontent.com/api-evangelist/agency-for-toxic-substances-and-disease-registry/refs/heads/main/rules/atsdr-spectral-rules.yml)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/agency-for-toxic-substances-and-disease-registry/refs/heads/main/json-schema/atsdr-tox-profile-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/agency-for-toxic-substances-and-disease-registry/refs/heads/main/json-schema/atsdr-mrl-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [J S O N L D Context](https://raw.githubusercontent.com/api-evangelist/agency-for-toxic-substances-and-disease-registry/refs/heads/main/json-ld/atsdr-toxicology-context.jsonld)
-- [Vocabulary](https://raw.githubusercontent.com/api-evangelist/agency-for-toxic-substances-and-disease-registry/refs/heads/main/vocabulary/atsdr-vocabulary.yaml)
+- [Getting started](https://www.atsdr.cdc.gov/substances/index.asp)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 29.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 52.6 |
+| Contract governance | 27.3 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 7.9 |
+
+**Agent readiness 23.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.8** — Government & Public Sector
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/agency-for-toxic-substances-and-disease-registry/](https://apis.io/providers/agency-for-toxic-substances-and-disease-registry/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Agency for Toxic Substances and Disease Registry: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/agency-for-toxic-substances-and-disease-registry/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
