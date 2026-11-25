@@ -87,7 +87,7 @@ Each property below is a page on APIs.io carrying the machine-readable artifact 
 
 Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Agency For Toxic Substances And Disease Registry Agentic Access](https://apis.io/agentic-access/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-agentic-access/)
+- [Agency for Toxic Substances and Disease Registry Agentic Access](https://apis.io/agentic-access/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-agentic-access/)
 
 #### JSON Schema (4)
 
@@ -149,25 +149,25 @@ Spectral rulesets for the provider's contracts.
 
 Authentication, trust centre, and vulnerability disclosure.
 
-- [Agency For Toxic Substances And Disease Registry Domain Security](https://apis.io/security/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-domain-security/)
+- [Agency for Toxic Substances and Disease Registry Domain Security](https://apis.io/security/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-domain-security/)
 
 #### Plans and pricing (1)
 
 Published plans, tiers and prices.
 
-- [Agency For Toxic Substances And Disease Registry Plans Pricing](https://apis.io/plans/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-plans-pricing/)
+- [Agency for Toxic Substances and Disease Registry Plans Pricing](https://apis.io/plans/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-plans-pricing/)
 
 #### Rate limits (1)
 
 Published request limits.
 
-- [Agency For Toxic Substances And Disease Registry Rate Limits](https://apis.io/rate-limits/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-rate-limits/)
+- [Agency for Toxic Substances and Disease Registry Rate Limits](https://apis.io/rate-limits/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-rate-limits/)
 
 #### FinOps (1)
 
 What the API costs to run, by operation.
 
-- [Agency For Toxic Substances And Disease Registry Finops](https://apis.io/finops/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-finops/)
+- [Agency for Toxic Substances and Disease Registry Finops](https://apis.io/finops/agency-for-toxic-substances-and-disease-registry/agency-for-toxic-substances-and-disease-registry-finops/)
 
 ## Where to find this API
 
@@ -179,18 +179,18 @@ Links to the company's own pages. This repository publishes no copy of their spe
 
 ## API Evangelist rating
 
-**Kin Score 29.1** — thin · rubric 0.24.0 · scored 2026-10-17
+**Kin Score 27.8** — thin · rubric 0.28.1 · scored 2026-11-21
 
 | Facet | Score |
 |---|---|
 | Discoverability | 66.1 |
 | Contract quality | 52.6 |
 | Contract governance | 27.3 |
-| Operational transparency | 7.9 |
+| Operational transparency | 7.1 |
 | Developer ergonomics | 19.0 |
-| Access clarity | 7.9 |
+| Access clarity | 6.4 |
 
-**Agent readiness 23.6** — agent-aware
+**Agent readiness 22.2** — agent-aware
 
 | Agent-readiness dimension | Result |
 |---|---|
@@ -213,8 +213,14 @@ Links to the company's own pages. This repository publishes no copy of their spe
 | Protected Resource Metadata | — |
 | Dynamic Client Registration | — |
 | Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | na |
+| MCP Tool Quality | na |
+| Onboarding Descriptor | — |
+| Dns Aid Index | na |
+| Markdown Negotiation | na |
 
-**Regulatory alignment 10.8** — Government & Public Sector
+**Regulatory alignment 4.9** — Government & Public Sector
 
 The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/agency-for-toxic-substances-and-disease-registry/](https://apis.io/providers/agency-for-toxic-substances-and-disease-registry/).
 
